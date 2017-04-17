@@ -61,7 +61,7 @@ endfu
 
 function! s:refreshView()
     let bufnr = expand('<bufnr>')
-    call s:systemasync("curl -X PUT -T - http://localhost:8090",
+    call s:systemasync("curl -X PUT -T - http://localhost:8091",
                 \ s:bufGetLines(bufnr))
 endfu
 
@@ -97,7 +97,7 @@ function! s:popBuffer(bufnr)
 endfu
 
 function! s:killDaemon()
-    call s:systemasync("curl -s -X DELETE http://localhost:8090", [])
+    call s:systemasync("curl -s -X DELETE http://localhost:8091", [])
 endfu
 
 function! s:bufGetLines(bufnr)
